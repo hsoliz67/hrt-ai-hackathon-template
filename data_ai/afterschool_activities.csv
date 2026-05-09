@@ -1,26 +1,58 @@
-Activity Name,Category,Provider,Cost Per Month,Age Group,Days Per Week,Duration (Hours),Skill Level,Description
-Coding with Scratch,STEM,Code Ninjas,25,6-10,3,1.0,Beginner,Learn programming basics through fun visual coding
-Python for Kids,STEM,Tynker,40,10-14,2,1.5,Beginner,Introduction to Python programming with projects
-Robotics Club,STEM,FIRST Robotics,60,10-16,2,2.0,Intermediate,Build and program robots using LEGO Mindstorms
-Math Olympiad Prep,STEM,Art of Problem Solving,55,12-18,2,1.5,Advanced,Competitive math training and problem solving
-Science Explorers,STEM,Mystery Science,20,7-12,2,1.0,Beginner,Hands-on science experiments and discovery
-Digital Art & Design,Arts,Skillshare Kids,30,8-14,2,1.5,Beginner,Create digital illustrations and graphic design
-Music Theory Online,Arts,Lessonface,50,8-16,2,1.0,Beginner,Learn music theory and ear training
-Creative Writing,Arts,Outschool,15,9-15,1,1.5,Beginner,Storytelling and creative writing workshops
-Drawing & Illustration,Arts,Outschool,20,7-13,2,1.0,Beginner,Learn sketching and illustration techniques
-Online Chess Club,Sports & Games,Chess.com Kids,10,6-18,3,1.0,Beginner,Chess strategy and competitive play
-Virtual Yoga for Kids,Sports & Games,Cosmic Kids,15,5-12,3,0.5,Beginner,Mindfulness and yoga sessions for children
-E-Sports Training,Sports & Games,PlayVS,45,12-18,3,2.0,Intermediate,Competitive gaming and teamwork skills
-Spanish for Beginners,Language,Outschool,25,6-14,3,0.5,Beginner,Fun conversational Spanish lessons
-Mandarin Chinese,Language,LingoAce,80,5-15,3,1.0,Beginner,Structured Mandarin language learning
-French Language Club,Language,Lingokids,35,6-12,2,0.5,Beginner,French vocabulary and conversation basics
-Public Speaking,Life Skills,Toastmasters Youth,20,10-18,1,1.5,Beginner,Build confidence and communication skills
-Financial Literacy,Life Skills,EverFi,0,12-18,1,1.0,Beginner,Learn budgeting and money management basics
-Cooking & Nutrition,Life Skills,Outschool,30,8-16,1,1.5,Beginner,Healthy cooking techniques and nutrition education
-Photography Basics,Arts,Outschool,25,10-16,1,1.5,Beginner,Learn composition and digital photography
-Game Design,STEM,iD Tech,70,12-18,2,2.0,Intermediate,Design and build your own video games
-Book Club,Language,Literati Kids,12,8-14,2,1.0,Beginner,Monthly book discussions and reading activities
-Debate Club,Life Skills,Varsity Tutors,40,12-18,2,1.5,Intermediate,Build argumentation and critical thinking skills
-Animation & Film,Arts,Outschool,35,10-16,1,2.0,Intermediate,Create animated short films and storytelling
-Typing & Keyboarding,STEM,Typing.com,0,7-12,3,0.5,Beginner,Build typing speed and accuracy
-Biology & Nature,STEM,iNaturalist,0,8-16,2,1.0,Beginner,Explore and document local nature and biodiversity
+Activity Name,Category,Provider,Cost Per Month,Age Group,Days Per Week,Duration (Hours),Skill Level,Delivery Mode,Location,Description
+Coding with Scratch,STEM,Code Ninjas,25,6-10,3,1.0,Beginner,Online,Online (Nationwide),Learn programming basics through fun visual coding
+Python for Kids,STEM,Tynker,40,10-14,2,1.5,Beginner,Online,Online (Nationwide),Introduction to Python programming with projects
+Robotics Club,STEM,FIRST Robotics,60,10-16,2,2.0,Intermediate,Online,Online (Nationwide),Build and program robots using LEGO Mindstorms
+Math Olympiad Prep,STEM,Art of Problem Solving,55,12-18,2,1.5,Advanced,Online,Online (Nationwide),Competitive math training and problem solving
+Science Explorers,STEM,Mystery Science,20,7-12,2,1.0,Beginner,Online,Online (Nationwide),Hands-on science experiments and discovery
+Digital Art & Design,Arts,Skillshare Kids,30,8-14,2,1.5,Beginner,Online,Online (Nationwide),Create digital illustrations and graphic design
+Music Theory Online,Arts,Lessonface,50,8-16,2,1.0,Beginner,Online,Online (Nationwide),Learn music theory and ear training
+Creative Writing,Arts,Outschool,15,9-15,1,1.5,Beginner,Online,Online (Nationwide),Storytelling and creative writing workshops
+Drawing & Illustration,Arts,Outschool,20,7-13,2,1.0,Beginner,Online,Online (Nationwide),Learn sketching and illustration techniques
+Online Chess Club,Sports & Games,Chess.com Kids,10,6-18,3,1.0,Beginner,Online,Online (Nationwide),Chess strategy and competitive play
+Virtual Yoga for Kids,Sports & Games,Cosmic Kids,15,5-12,3,0.5,Beginner,Online,Online (Nationwide),Mindfulness and yoga sessions for children
+E-Sports Training,Sports & Games,PlayVS,45,12-18,3,2.0,Intermediate,Online,Online (Nationwide),Competitive gaming and teamwork skills
+Spanish for Beginners,Language,Outschool,25,6-14,3,0.5,Beginner,Online,Online (Nationwide),Fun conversational Spanish lessons
+Mandarin Chinese,Language,LingoAce,80,5-15,3,1.0,Beginner,Online,Online (Nationwide),Structured Mandarin language learning
+French Language Club,Language,Lingokids,35,6-12,2,0.5,Beginner,Online,Online (Nationwide),French vocabulary and conversation basics
+Public Speaking,Life Skills,Toastmasters Youth,20,10-18,1,1.5,Beginner,Online,Online (Nationwide),Build confidence and communication skills
+Financial Literacy,Life Skills,EverFi,0,12-18,1,1.0,Beginner,Online,Online (Nationwide),Learn budgeting and money management basics
+Cooking & Nutrition,Life Skills,Outschool,30,8-16,1,1.5,Beginner,Online,Online (Nationwide),Healthy cooking techniques and nutrition education
+Photography Basics,Arts,Outschool,25,10-16,1,1.5,Beginner,Online,Online (Nationwide),Learn composition and digital photography
+Game Design,STEM,iD Tech,70,12-18,2,2.0,Intermediate,Online,Online (Nationwide),Design and build your own video games
+Book Club,Language,Literati Kids,12,8-14,2,1.0,Beginner,Online,Online (Nationwide),Monthly book discussions and reading activities
+Debate Club,Life Skills,Varsity Tutors,40,12-18,2,1.5,Intermediate,Online,Online (Nationwide),Build argumentation and critical thinking skills
+Animation & Film,Arts,Outschool,35,10-16,1,2.0,Intermediate,Online,Online (Nationwide),Create animated short films and storytelling
+Typing & Keyboarding,STEM,Typing.com,0,7-12,3,0.5,Beginner,Online,Online (Nationwide),Build typing speed and accuracy
+Biology & Nature,STEM,iNaturalist,0,8-16,2,1.0,Beginner,Online,Online (Nationwide),Explore and document local nature and biodiversity
+Mindfulness & Emotions,Life Skills,Centervention,0,5-12,3,0.5,Beginner,Online,Online (Nationwide),SEL program teaching self-awareness and emotional regulation through guided activities
+Empathy in Action,Life Skills,Everyday Speech,25,6-14,2,1.0,Beginner,Online,Online (Nationwide),SEL video-based lessons on empathy compassion and understanding others
+Friendship & Social Skills,Life Skills,Sanford Harmony,0,5-11,2,1.0,Beginner,Online,Online (Nationwide),SEL program building positive peer relationships and conflict resolution skills
+Zones of Regulation,Life Skills,Learnfully,35,6-12,2,0.5,Beginner,Online,Online (Nationwide),SEL framework helping kids identify emotions and develop self-regulation strategies
+Growth Mindset Workshop,Life Skills,Big Life Journal,15,8-16,1,1.0,Beginner,Online,Online (Nationwide),SEL program fostering resilience grit and a positive attitude toward challenges
+Second Step Online,Life Skills,Committee for Children,0,5-14,2,1.0,Beginner,Online,Online (Nationwide),SEL curriculum covering emotion management empathy and problem-solving skills
+Ripple Effects,Life Skills,Ripple Effects,20,11-18,2,1.0,Intermediate,Online,Online (Nationwide),SEL program addressing stress anger and social decision-making for older youth
+STEAM On Demand: Engineering,STEM,PBS LearningMedia,0,6-14,5,0.5,Beginner,Online,Online (Nationwide),On-demand engineering design challenges and STEAM videos from PBS
+STEAM On Demand: Space & Earth,STEM,Generation Genius,10,5-12,5,0.5,Beginner,Online,Online (Nationwide),On-demand science videos and experiments covering space weather and earth science
+STEAM On Demand: Math & Science,STEM,Khan Academy,0,6-18,5,1.0,Beginner,Online,Online (Nationwide),Free on-demand STEAM lessons covering math science computing and more
+STEAM On Demand: Maker Lab,STEM,Tinkercad,0,8-16,3,1.0,Beginner,Online,Online (Nationwide),Free on-demand 3D design and electronics projects for young makers
+STEAM On Demand: Biology,STEM,BrainPOP,15,7-14,5,0.5,Beginner,Online,Online (Nationwide),On-demand animated STEAM videos covering biology chemistry physics and more
+STEAM On Demand: Coding & Art,STEM,Scratch,0,6-16,3,1.0,Beginner,Online,Online (Nationwide),Free on-demand platform combining creative coding with digital art and STEAM storytelling
+STEAM On Demand: Environmental Science,STEM,iNaturalist,0,8-18,3,1.0,Intermediate,Online,Online (Nationwide),On-demand citizen science platform for exploring ecology biodiversity and environmental STEAM
+Boys & Girls Club STEM,STEM,Boys & Girls Club of Tulare County,15,6-18,5,2.0,Beginner,In-Person,Visalia CA,Hands-on STEM projects and robotics at the local Boys & Girls Club after school facility
+4-H Science & Agriculture,STEM,UC Cooperative Extension Tulare,0,8-18,1,2.0,Beginner,In-Person,Tulare County CA,Learn agriculture science animal care and STEM skills through Tulare County 4-H clubs
+TCOE STEAM Lab,STEM,Tulare County Office of Education,0,10-18,2,1.5,Intermediate,In-Person,Visalia CA,Hands-on STEAM lab sessions hosted by TCOE featuring engineering design and technology
+Visalia Makerspace Club,STEM,Visalia Public Library,0,10-18,2,1.5,Beginner,In-Person,Visalia CA,Free drop-in makerspace with 3D printers laser cutters and electronics for young creators
+Tulare Arts & Crafts Studio,Arts,Tulare County Arts Alliance,20,6-16,2,1.5,Beginner,In-Person,Tulare CA,In-person visual arts studio covering painting drawing and mixed media for youth
+Porterville Youth Theater,Arts,Porterville Community Theater,25,10-18,3,2.0,Beginner,In-Person,Porterville CA,Acting voice and stagecraft classes culminating in a live performance
+Visalia Youth Orchestra,Arts,Visalia Unified School District,30,8-18,2,2.0,Intermediate,In-Person,Visalia CA,In-person ensemble music program for strings winds and percussion
+YMCA Youth Sports,Sports & Games,YMCA of Tulare County,40,5-14,3,1.5,Beginner,In-Person,Visalia CA,Multi-sport after school program including basketball soccer and swimming at the YMCA
+Tulare County Soccer League,Sports & Games,Tulare Youth Soccer,30,6-16,2,1.5,Beginner,In-Person,Tulare CA,Recreational and competitive youth soccer league serving Tulare County communities
+Junior Achievement Tulare,Life Skills,Junior Achievement of Central CA,0,12-18,1,1.0,Beginner,In-Person,Visalia CA,Financial literacy entrepreneurship and career readiness program for Tulare County youth
+Porterville After School Academy,Life Skills,Porterville Unified School District,0,5-14,5,2.0,Beginner,In-Person,Porterville CA,Free after school program offering homework help enrichment and social skills development
+Visalia Reads Book Club,Language,Tulare County Library,0,6-14,2,1.0,Beginner,In-Person,Visalia CA,Free in-person reading and literacy program at Tulare County library branches
+Bilingual Buddies Spanish,Language,El Diamante After School,10,5-12,3,1.0,Beginner,In-Person,Visalia CA,Spanish language and culture program serving Tulare County bilingual families
+TCOE Hybrid STEAM Academy,STEM,Tulare County Office of Education,20,10-18,2,1.5,Intermediate,Hybrid,Tulare County CA,Hybrid STEAM program blending in-person lab days with on-demand video lessons from TCOE
+Hybrid SEL & Wellness,Life Skills,Kings-Tulare Regional Center,15,6-14,3,1.0,Beginner,Hybrid,Tulare County CA,Hybrid SEL program combining in-person group sessions with online mindfulness activities
+Visalia Digital Arts Hybrid,Arts,Visalia Unified School District,25,10-16,2,1.5,Intermediate,Hybrid,Visalia CA,Hybrid digital arts program with weekly in-person studio sessions and online project work
+Central Valley Coding Club,STEM,Code.org & TCOE Partnership,0,10-18,2,1.0,Beginner,Hybrid,Tulare County CA,Free hybrid coding club with online lessons and monthly in-person meetups across Tulare County
+Tulare County Chess Program,Sports & Games,Tulare County Chess Federation,10,8-18,2,1.0,Beginner,Hybrid,Tulare County CA,Hybrid chess program with online matches and monthly in-person tournaments countywide
