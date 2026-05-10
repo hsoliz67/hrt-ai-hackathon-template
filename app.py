@@ -85,7 +85,7 @@ div.pill-off > div[data-testid="stButton"] > button {
 
 # ── Session state ─────────────────────────────────────────────
 for key, val in [("sel_category",None),("sel_age",None),("sel_skill",None),
-                 ("sel_mode","All"),("favorites",set())]:
+                 ("sel_mode","All"),("favorites",set()),("compare_set",set())]:
     if key not in st.session_state:
         st.session_state[key] = val
 
@@ -221,20 +221,22 @@ def render_activities(cat, data):
         st.session_state.open_detail = {}
 
     # Column headers
-    h1, h2, h3, h4, h5 = st.columns([3, 1.2, 1, 1, 0.6])
+    h1, h2, h3, h4, h5, h6 = st.columns([3, 1.2, 1, 1, 0.6, 0.6])
     h1.markdown("<span style='font-size:0.78rem;color:#888;font-weight:700;'>ACTIVITY</span>", unsafe_allow_html=True)
     h2.markdown("<span style='font-size:0.78rem;color:#888;font-weight:700;'>COST</span>", unsafe_allow_html=True)
     h3.markdown("<span style='font-size:0.78rem;color:#888;font-weight:700;'>MODE</span>", unsafe_allow_html=True)
     h4.markdown("<span style='font-size:0.78rem;color:#888;font-weight:700;'>AGES</span>", unsafe_allow_html=True)
     h5.markdown("<span style='font-size:0.78rem;color:#888;font-weight:700;'></span>", unsafe_allow_html=True)
+    h6.markdown("<span style='font-size:0.78rem;color:#888;font-weight:700;'>CMP</span>", unsafe_allow_html=True)
     st.markdown("<hr style='margin:4px 0 8px 0;border-color:#eee;'>", unsafe_allow_html=True)
 
     for _, row in data.iterrows():
         uid = f"{cat}__{row['Activity Name']}"
         is_open = st.session_state.open_detail.get(uid, False)
         is_fav = row["Activity Name"] in st.session_state.favorites
+        in_compare = row["Activity Name"] in st.session_state.compare_set
 
-        c1, c2, c3, c4, c5 = st.columns([3, 1.2, 1, 1, 0.6])
+        c1, c2, c3, c4, c5, c6 = st.columns([3, 1.2, 1, 1, 0.6, 0.6])
         with c1:
             fav_icon = "♥ " if is_fav else ""
             st.markdown(f"**{fav_icon}{row['Activity Name']}**")
@@ -244,6 +246,14 @@ def render_activities(cat, data):
             st.markdown(mode_badge(row["Delivery Mode"]), unsafe_allow_html=True)
         with c4:
             st.markdown(f"<span style='font-size:0.85rem;color:#444;'>{row['Age Group']}</span>", unsafe_allow_html=True)
+        with c6:
+            cmp_label = "⊖" if in_compare else "⊕"
+            if st.button(cmp_label, key=f"cmp_{uid}", help="Add/remove from comparison"):
+                if in_compare:
+                    st.session_state.compare_set.discard(row["Activity Name"])
+                else:
+                    st.session_state.compare_set.add(row["Activity Name"])
+                st.rerun()
         with c5:
             if st.button("▾" if is_open else "▸", key=f"tog_{uid}"):
                 st.session_state.open_detail[uid] = not is_open
@@ -294,3 +304,40 @@ for row_cats in card_rows:
                 st.markdown(f"#### {CAT_ICONS[active_cat]} {active_cat}")
                 render_activities(active_cat, d)
         st.markdown("---")
+
+# ── Compare Panel ─────────────────────────────────────────────
+if st.session_state.compare_set:
+    st.markdown("---")
+    cmp_names = list(st.session_state.compare_set)
+    st.markdown(f"### ⚖️ Compare Programs ({len(cmp_names)} selected)")
+    if len(cmp_names) < 2:
+        st.info("Select at least 2 programs using the ⊕ button to compare them.")
+    else:
+        cmp_df = df[df["Activity Name"].isin(cmp_names)].set_index("Activity Name")
+        display_fields = [
+            ("Category", "Category"),
+            ("Cost Per Month", "Cost/Month"),
+            ("Delivery Mode", "Mode"),
+            ("Age Group", "Ages"),
+            ("Skill Level", "Level"),
+            ("Days Per Week", "Days/Week"),
+            ("Duration (Hours)", "Hours/Session"),
+            ("Location", "Location"),
+            ("Provider", "Provider"),
+        ]
+        cols = st.columns(len(cmp_names))
+        for col, name in zip(cols, cmp_names):
+            row = cmp_df.loc[name]
+            with col:
+                st.markdown(f"**{name}**")
+                st.markdown(cost_badge(row["Cost Per Month"]), unsafe_allow_html=True)
+                st.markdown(mode_badge(row["Delivery Mode"]), unsafe_allow_html=True)
+                st.markdown("<br>", unsafe_allow_html=True)
+                for field, label in display_fields[2:]:
+                    st.markdown(f"<span style='font-size:0.78rem;color:#888;font-weight:700;'>{label.upper()}</span><br>"
+                                f"<span style='font-size:0.9rem;'>{row[field]}</span>", unsafe_allow_html=True)
+                    st.markdown("<div style='height:6px'></div>", unsafe_allow_html=True)
+                st.caption(row.get("Description", "")[:120] + "..." if len(str(row.get("Description",""))) > 120 else row.get("Description",""))
+    if st.button("✕ Clear Comparison"):
+        st.session_state.compare_set = set()
+        st.rerun()
