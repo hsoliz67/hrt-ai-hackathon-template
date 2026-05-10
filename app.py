@@ -216,23 +216,59 @@ def render_activities(cat, data):
     opts = {"Cost: Low to High":("Cost Per Month",True),"Cost: High to Low":("Cost Per Month",False),"Name A–Z":("Activity Name",True)}
     sc, sa = opts[st.selectbox("Sort", list(opts.keys()), key=f"sort_{cat}", label_visibility="collapsed")]
     data = data.sort_values(sc, ascending=sa)
+
+    if "open_detail" not in st.session_state:
+        st.session_state.open_detail = {}
+
+    # Column headers
+    h1, h2, h3, h4, h5 = st.columns([3, 1.2, 1, 1, 0.6])
+    h1.markdown("<span style='font-size:0.78rem;color:#888;font-weight:700;'>ACTIVITY</span>", unsafe_allow_html=True)
+    h2.markdown("<span style='font-size:0.78rem;color:#888;font-weight:700;'>COST</span>", unsafe_allow_html=True)
+    h3.markdown("<span style='font-size:0.78rem;color:#888;font-weight:700;'>MODE</span>", unsafe_allow_html=True)
+    h4.markdown("<span style='font-size:0.78rem;color:#888;font-weight:700;'>AGES</span>", unsafe_allow_html=True)
+    h5.markdown("<span style='font-size:0.78rem;color:#888;font-weight:700;'></span>", unsafe_allow_html=True)
+    st.markdown("<hr style='margin:4px 0 8px 0;border-color:#eee;'>", unsafe_allow_html=True)
+
     for _, row in data.iterrows():
+        uid = f"{cat}__{row['Activity Name']}"
+        is_open = st.session_state.open_detail.get(uid, False)
         is_fav = row["Activity Name"] in st.session_state.favorites
-        with st.expander(f"{'♥' if is_fav else '♡'}  {row['Activity Name']}"):
-            st.markdown(cost_badge(row["Cost Per Month"]) + "&nbsp;&nbsp;" + mode_badge(row["Delivery Mode"]), unsafe_allow_html=True)
-            st.markdown("")
-            c1, c2 = st.columns([3, 2])
-            with c1:
-                st.write(row["Description"])
-                st.caption(f"Provider: {row['Provider']}")
-            with c2:
-                st.write(f"**Ages:** {row['Age Group']}")
-                st.write(f"**Level:** {row['Skill Level']}")
-                st.write(f"**Schedule:** {row['Days Per Week']}x/week, {row['Duration (Hours)']} hr/session")
-                st.write(f"**Location:** {row['Location']}")
-            if st.button(f"{'Remove from' if is_fav else 'Save to'} Favorites", key=f"fav_{cat}_{row['Activity Name']}"):
-                st.session_state.favorites.discard(row["Activity Name"]) if is_fav else st.session_state.favorites.add(row["Activity Name"])
+
+        c1, c2, c3, c4, c5 = st.columns([3, 1.2, 1, 1, 0.6])
+        with c1:
+            fav_icon = "♥ " if is_fav else ""
+            st.markdown(f"**{fav_icon}{row['Activity Name']}**")
+        with c2:
+            st.markdown(cost_badge(row["Cost Per Month"]), unsafe_allow_html=True)
+        with c3:
+            st.markdown(mode_badge(row["Delivery Mode"]), unsafe_allow_html=True)
+        with c4:
+            st.markdown(f"<span style='font-size:0.85rem;color:#444;'>{row['Age Group']}</span>", unsafe_allow_html=True)
+        with c5:
+            if st.button("▾" if is_open else "▸", key=f"tog_{uid}"):
+                st.session_state.open_detail[uid] = not is_open
                 st.rerun()
+
+        if is_open:
+            with st.container():
+                st.markdown(
+                    "<div style='background:#f8f9fb;border-radius:10px;padding:14px 18px;margin:4px 0 10px 0;'>",
+                    unsafe_allow_html=True)
+                d1, d2 = st.columns([3, 2])
+                with d1:
+                    st.write(row["Description"])
+                    st.caption(f"Provider: {row['Provider']}")
+                with d2:
+                    st.write(f"**Level:** {row['Skill Level']}")
+                    st.write(f"**Schedule:** {row['Days Per Week']}x/week · {row['Duration (Hours)']} hr/session")
+                    st.write(f"**Location:** {row['Location']}")
+                fav_label = "♥ Remove from Favorites" if is_fav else "♡ Save to Favorites"
+                if st.button(fav_label, key=f"fav_{uid}"):
+                    st.session_state.favorites.discard(row["Activity Name"]) if is_fav else st.session_state.favorites.add(row["Activity Name"])
+                    st.rerun()
+                st.markdown("</div>", unsafe_allow_html=True)
+
+        st.markdown("<hr style='margin:2px 0;border-color:#f0f0f0;'>", unsafe_allow_html=True)
 
 card_rows = [["Language","Life Skills"],["All","Arts"],["STEM","Sports & Games"]]
 active_cat = st.session_state.sel_category
