@@ -1,49 +1,36 @@
-# 🎉 HRT AI Hackathon Template
+# After School Enrichment
 
-A GitHub Codespace template for the Hospitality, Recreation, and Tourism (HRT) Applied Research Hackathon. Build a working Streamlit prototype with Claude — no coding experience required.
+The all-in-one platform to discover, compare, and book the perfect out-of-school activities for your child.
 
-## Getting Started
+## What It Does
 
-1. Click **Code** → **Create Codespace on main**
-2. Wait for the environment to set up (1~5 min). The terminal will tell you when everything is ready.
-3. Click the **Claude** (orange star) icon at the top right corner
-4. Sign in with your **Claude Team** account
-5. Tell Claude what you want to build! For example:
-   > "Build a dashboard that shows hotel occupancy by city."
+### Finding the right program shouldn't be a full-time job. Our app simplifies searching by bringing every local opportunity into a single searchable space.
 
-## Claude Commands
+- Access a comprehensive directory of after-school programs in one place.
+- Filter by cost to find high-quality programs that fit your family's budget.
+- Find options specifically designed to meet your child's unique needs, interests, and skill levels. 
 
-Type these in the Claude Code chat at any time:
+## Key Features
+- View Schedules, locations, and ratings side-by-side.
+- No hidden fees, see tuition and supply costs upfront.
+- Narrow your search by age group, interest (STEAM and Sports), or delivery methods (In-person vs. Virtual).
 
-| Command | What it does |
-|---------|-------------|
-| `/run` | Start your app and give you a clickable link to view it |
-| `/checkpoint` | Save your current progress |
-| `/back-to-checkpoint` | Restore to your last saved checkpoint |
-| `/restart` | Reset everything back to the very beginning |
-| `/write-readme` | Generate a README based on your current app |
-| `/push` | Publish your project to your own GitHub for your portfolio |
-| `/handoff` | Write a session summary to pick up later |
-| `/resume` | Load the previous session summary |
+## How to Use
+1. **Find your spark**: Type what interests your child ("Coding" or "Soccer") into the search bar, or simply browse by category ("Languages" or "Life Skills")
+2. **Set your budget**: Use the Cost Filter to find programs that fit your wallet.
+3. **Check the fit**: Look for Age and Method tags (like "Young Explorers, 5-8 or "Teens, 13-18") to ensure it matches your familys needs.
+4. **Pick your favortes**: Use the Compare button to look at programs side-by-side. 
 
-## What's Inside
+**Make a suggestion**: If your child has a specific interest or need that isn't listed yet, let us know! We are constantly adding new partners and want to make sure of finding the activities your community actually wants. 
 
-| File / Folder | Purpose |
-|---------------|---------|
-| `app.py` | Your Streamlit app — Claude writes all code here |
-| `CLAUDE.md` | Instructions that guide Claude's behavior |
-| `requirements.txt` | Python dependencies (Streamlit, Pandas) |
-| `data/` | Place your own datasets here (CSV, etc.) |
-| `data_ai/` | Claude saves any generated or crawled data here |
+## Data
+For the datasets and inputs, this app uses graphics and layouts created on Canva:
 
-## Uploading Your Own Data
+- WEB.pdf: Category graphics
+- WEB (1).pdf: App Title graphic
+- WEB (2).pdf: Age Group graphics
 
-1. In the left sidebar, right-click the `data/` folder
-2. Select **Upload...**
-3. Choose your file
-
-CSV files will automatically open as a table when you click them.
-
----
-
-**Have fun building!** 🚀
+## Built With
+- Streamlit
+- Pandas
+- base64
